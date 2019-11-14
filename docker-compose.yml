@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  web:
+    image: marcfreiheit/htr-web:latest
+    build:
+      context: ../htr-web
+    ports:
+      - "80:80"
+
+  camunda-dmn:
+    image: marcfreiheit/htr-camunda-dmn:latest
+    build:
+      context: ../htr-condition-tables
+    ports:
+      - "8080:8080"
